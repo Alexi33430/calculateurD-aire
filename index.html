@@ -1,0 +1,143 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'aire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="image-fond"></div>
+    <H1>Calculateur d'aire</H1>
+    <form>
+        <label for="options">Choisissez une option :</label>
+        <select name="options" id="options">
+            <option value="defaut">Faites votre choix</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="carre">Carré</option>
+            <option value="triangle">Triangle quelconque</option>
+            <option value="parallelogramme">Parallélogramme</option>
+            <option value="trapeze">Trapèze</option>
+            <option value="losange">Losange</option>
+        </select>
+        <!-- div pour zone rectangle -->
+        <div id="espaceRectangle" style="display: none">
+            <label for="longueur">Longueur :</label>
+            <input type="number" id="longueur" name="longueur" min="0" step="any">
+            <label for="largeur">Largeur :</label>
+            <input type="number" id="largeur" name="largeur" min="0" step="any">
+
+            <div><!-- pour aligner l'image et le bouton calcul-->
+                <div class="formule">
+                    <p>Formule: A=lxL</p>
+                    <p>Explication: L'aire du rectangle est égale au produit de sa longueur L et de sa
+                        largeur l.
+                    </p>
+                </div>
+                <img class='image' src="rectangle.png" alt="un-rectangle">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+
+        <!-- section pour le carré -->
+        <div id="espaceCarre" style="display: none;">
+            <label for="cote">Côté :</label>
+            <input type="number" id="cote" name="cote" min="0" step="any">
+            <div>
+                <div class="formule">
+                    <p>Formule : A= côté x côté = c²</p>
+                    <p>Explication: L'aire du carré est égale au carré de la longueur de l'un de ses côtés c.</p>
+
+                </div>
+                <img class='image' src="carre.gif" alt="un-carre">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+
+        <!-- div pour espace triangle-->
+        <div id="espaceTriangle" style="display: none;">
+            <label for="base">Base :</label>
+            <input type="number" id="base" name="base" min="0" step="any">
+            <label for="hauteur">Hauteur :</label>
+            <input type="number" id="hauteur" name="hauteur" min="0" step="any">
+            <div><!-- div pour image-->
+                <div class="formule">
+                    <p>Formule : A =1/2 x b x h</p>
+                    <p>Explication : L'aire du triangle est égale à la moitié du produit de la base b et de la hauteur
+                        h.</p>
+                </div>
+                <img class="image" src="triangle.jpg" alt="un-triangle">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+        <!-- div zone parallelogramme-->
+        <div id="espaceParallelogramme" style="display: none">
+            <label for="baseParallelogramme">Base :</label>
+            <input type="number" id="baseParallelogramme" name="baseParallelogramme" min="0" step="any">
+            <label for="hauteurParallelogramme">Hauteur :</label>
+            <input type="number" id="hauteurParallelogramme" name="hauteurParallelogramme" min="0" step="any">
+            <div><!-- div pour image-->
+                <div class="formule">
+                    <p>Formule : A = bxh</p>
+                    <p>Explication : L'aire du parallélogramme est égale au produit de la base b et de la hauteur h
+                        perpendiculaire à cette base.</p>
+                </div>
+                <img class="image" src="parallelogramme.jpg" alt="un-parallelogramme">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+        <!-- zone trapèze-->
+        <div id="espaceTrapeze" style="display: none">
+            <label for="petiteBaseTrapeze">Petite base : </label>
+            <input type="number" id="petiteBaseTrapeze" name="petiteBaseTrapeze" min="0" step="any">
+            <label for="grandeBaseTrapeze">Grande base : </label>
+            <input type="number" id="grandeBaseTrapeze" name="grandeBaseTrapeze" min="0" step="any">
+            <label for="hauteurTrapeze">Hauteur : </label>
+            <input type="number" id="hauteurTrapeze" name="hauteurTrapeze" min="0" step="any">
+            <div>
+                <div class="formule">
+                    <p>Formule : A= (B+b)/2 x h</p>
+                    <p>Explication : L'aire du trapèze est égale à la moitié de la somme des longueurs des bases B et b,
+                        multipliée par la hauteur h.</p>
+                </div>
+                <img class="image" src="trapeze.jpg" alt="un-trapeze">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+        <!-- zone losange-->
+        <div id="espaceLosange" style="display: none">
+            <label for="petiteDiagonale">Petite diagonale :</label>
+            <input type="number" id="petiteDiagonale" name="petiteDiagonale" min="0" step="any">
+            <label for="grandeDiagonale">Grande diagonale :</label>
+            <input type="number" id="grandeDiagonale" name="grandeDiagonale" min="0" step="any">
+            <div class="formule">
+                <p>Formule: A=(Dxd)/2</p>
+                <p>Explication: L'aire du losange est égale à la moitié du produit des diagonales D et d.</p>
+                <img class="image" src="losange.webp" alt="un-losange">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+        </div>
+        
+        <!-- espace pour afficher le résultat -->
+        <div id="resultat" style="display: none">
+            Résultat:
+        </div>
+
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
