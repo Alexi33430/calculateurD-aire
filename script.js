@@ -6,6 +6,8 @@ document.getElementById('options').addEventListener('change', function () {
     const espaceParallelogramme = document.getElementById('espaceParallelogramme');
     const espaceTrapeze = document.getElementById('espaceTrapeze');
     const espaceLosange = document.getElementById("espaceLosange");
+    const espaceCercle = document.getElementById('espaceCercle');
+    const espaceEllipse = document.getElementById('espaceEllipse');
     const resultat = document.getElementById('resultat');
 
     // Masquer toutes les zones au début
@@ -15,6 +17,8 @@ document.getElementById('options').addEventListener('change', function () {
     espaceParallelogramme.style.display = 'none';
     espaceTrapeze.style.display = 'none';
     espaceLosange.style.display = 'none';
+    espaceCercle.style.display = 'none';
+    espaceEllipse.style.display = 'none';
     resultat.style.display = 'none';
 
     // afficher la zone correspondante
@@ -30,6 +34,10 @@ document.getElementById('options').addEventListener('change', function () {
         espaceTrapeze.style.display = 'block';
     } else if (selectionnerElement === 'losange') {
         espaceLosange.style.display = 'block';
+    } else if (selectionnerElement === 'cercle') {
+        espaceCercle.style.display = 'block';
+    } else if (selectionnerElement === 'ellipse') {
+        espaceEllipse.style.display = 'block';
     }
 });
 // rectangle
@@ -137,6 +145,35 @@ document.getElementById('espaceLosange').querySelector('button').addEventListene
         }
     }else{
         resultatDiv.innerHTML= 'veuillez entrer des valeurs valides.';
+        resultatDiv.style.display='block';
+    }
+})
+//cercle
+document.getElementById('espaceCercle').querySelector('button').addEventListener('click', function(){
+    const rayon= parseFloat(document.getElementById('rayon').value);
+    const resultatDiv= document.getElementById('resultat');
+
+    if(!isNaN(rayon)){
+        const aire= Math.PI * rayon * rayon;
+        resultatDiv.innerHTML= 'Aire du cercle= '+aire.toFixed(2);
+        resultatDiv.style.display='block';
+    }else{
+        resultatDiv.innerHTML= 'Veuillez entrer une valeur valide.';
+        resultatDiv.style.display='block';
+    }
+})
+//ellipse
+document.getElementById('espaceEllipse').querySelector('button').addEventListener('click', function(){
+    const grandAxe= parseFloat(document.getElementById('grandAxe').value);
+    const petitAxe= parseFloat(document.getElementById('petitAxe').value);
+    const resultatDiv= document.getElementById('resultat');
+
+    if(!isNaN(grandAxe) && !isNaN(petitAxe)){
+        const aire= Math.PI * grandAxe * petitAxe;
+        resultatDiv.innerHTML= 'Aire de l\'ellipse= '+aire.toFixed(2);
+        resultatDiv.style.display='block';
+    }else{
+        resultatDiv.innerHTML= 'Veuillez entrer des valeurs valides.';
         resultatDiv.style.display='block';
     }
 })

@@ -20,6 +20,8 @@
             <option value="parallelogramme">Parallélogramme</option>
             <option value="trapeze">Trapèze</option>
             <option value="losange">Losange</option>
+            <option value="cercle">Cercle</option>
+            <option value="ellipse">Ellipse</option>
         </select>
         <!-- div pour zone rectangle -->
         <div id="espaceRectangle" style="display: none">
@@ -130,11 +132,37 @@
                 <button type="button">Calcul</button>
             </div>
         </div>
-        
-        <!-- espace pour afficher le résultat -->
-        <div id="resultat" style="display: none">
-            Résultat:
-        </div>
+        <!-- zone cercle-->
+        <div id="espaceCercle" style="display: none">
+            <label for="rayon">Rayon :</label>
+            <input type="number" id="rayon" name="rayon" min="0" step="any">
+            <div class="formule">
+                <p>Formule: A=πr²</p>
+                <p>Explication: L'aire du cercle est égale à π multiplié par le carré du rayon r.</p>
+                <img class="image" src="cercle.png" alt="un-cercle">
+            </div>
+            <div>
+                <button type="button">Calcul</button>
+            </div>
+            <!-- zone ellipse-->
+            <div id="espaceEllipse" style="display: none">
+                <label for="grandAxe">Grand axe :</label>
+                <input type="number" id="grandAxe" name="grandAxe" min="0" step="any">
+                <label for="petitAxe">Petit axe :</label>
+                <input type="number" id="petitAxe" name="petitAxe" min="0" step="any">
+                <div class="formule">
+                    <p>Formule: A=π x grand axe x petit axe</p>
+                    <p>Explication: L'aire de l'ellipse est égale à π multiplié par le grand axe et le petit axe.</p>
+                    <img class="image" src="ellipse.jpg" alt="une-ellipse">
+                </div>
+                <div>
+                    <button type="button">Calcul</button>
+                </div>
+            </div>
+
+            <!-- espace pour afficher le résultat -->
+            <div id="resultat" style="display: none">
+            </div>
 
     </form>
     <script src="script.js"></script>
